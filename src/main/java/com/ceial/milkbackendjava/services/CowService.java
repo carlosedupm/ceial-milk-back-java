@@ -27,6 +27,7 @@ public class CowService {
 		return new CowDTO(cow);
 	}
 
+	@Transactional
 	public CowMinDTO update(CowMinDTO dto, Long id) {
 		var cow = cowRepository.findById(id).orElseThrow();
 		cow.setName(dto.getName());
