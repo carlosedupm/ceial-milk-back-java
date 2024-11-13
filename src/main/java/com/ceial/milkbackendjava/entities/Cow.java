@@ -33,6 +33,9 @@ public class Cow {
     private String identification; // Identification of cow
     private String name; // Name or nickname of the cow
     private int age; // Age of the cow
+    
+    // Lot Identification
+    private Integer lotId; //Identification lot
 
     // Physical characteristics
     private double weight; // Current weight of the cow
@@ -51,10 +54,6 @@ public class Cow {
     // Health and monitoring
     private double bodyTemperature; // Body temperature for health monitoring
     private String healthStatus; // General health status
-
-    // Location and management
-    private String herd; // Herd or group the cow belongs to
-    private String pastureArea; // Pasture area where the cow is allocated
 
     // Audit information
     @CreationTimestamp

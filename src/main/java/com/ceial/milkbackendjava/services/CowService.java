@@ -22,8 +22,7 @@ public class CowService {
 		var cow = cowRepository.findById(id).orElseThrow();
 		cow.setName(dto.getName());
 		cow.setBreed(dto.getBreed());
-		cow.setHerd(dto.getHerd());
-		cow.setPastureArea(dto.getPastureArea());
+		cow.setLotId(dto.getLotId());
 		cow.setHealthStatus(dto.getHealthStatus());
 		cow.setUpdatedBy(dto.getUpdatedBy());
 		return new CowMinDTO(cowRepository.save(cow));

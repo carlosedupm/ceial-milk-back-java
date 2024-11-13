@@ -13,11 +13,10 @@ import lombok.Setter;
 @NoArgsConstructor
 public class CowMinDTO {
 	private Long id;
+	private String identification;
 	private String name;
 	private String breed;
-	private String herd;
-	private String pastureArea;
-	private String identification;
+	private Integer lotId;
 	private String healthStatus;
 	private String createdBy;
 	private String updatedBy;
@@ -26,8 +25,7 @@ public class CowMinDTO {
 		this.id = cow.getId();
 		this.name = cow.getName();
 		this.breed = cow.getBreed();
-		this.herd = cow.getHerd();
-		this.pastureArea = cow.getPastureArea();
+		this.lotId = cow.getLotId();
 		this.identification = cow.getIdentification();
 		this.healthStatus = cow.getHealthStatus();
 		this.createdBy = cow.getCreatedBy();
