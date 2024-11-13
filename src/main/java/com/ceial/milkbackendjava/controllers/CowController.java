@@ -12,7 +12,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.ceial.milkbackendjava.dtos.CowDTO;
 import com.ceial.milkbackendjava.dtos.CowMinDTO;
+import com.ceial.milkbackendjava.dtos.MilkingMinDTO;
 import com.ceial.milkbackendjava.services.CowService;
+import com.ceial.milkbackendjava.services.MilkingService;
 
 @RestController
 @RequestMapping("/api/cows")
@@ -20,6 +22,9 @@ public class CowController {
 
 	@Autowired
 	private CowService cowService;
+	
+	@Autowired
+	private MilkingService milkingService;
 	
 	@GetMapping
 	public List<CowMinDTO> findAll() {
@@ -29,6 +34,11 @@ public class CowController {
 	@GetMapping(path = "/{id}")
 	public CowDTO findById(@PathVariable("id") Long id) {
 		return cowService.findById(id);
+	}
+	
+	@GetMapping(path = "/{id}/milkings")
+	public List<MilkingMinDTO> findByCowId(@PathVariable("id") Long id) {
+		return milkingService.findByCowId(id);
 	}
 	
 	@PutMapping(path = "/{id}")

@@ -31,6 +31,8 @@ public class MilkingController {
 		return milkingService.findById(id);
 	}
 	
+	
+	
 	@PutMapping(path = "/{id}")
 	public MilkingMinDTO update(@RequestBody MilkingMinDTO dto, @PathVariable("id") Long id) {
 		return milkingService.update(dto, id);
