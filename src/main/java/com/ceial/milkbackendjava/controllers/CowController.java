@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.ceial.milkbackendjava.dtos.CowDTO;
 import com.ceial.milkbackendjava.dtos.CowMinDTO;
 import com.ceial.milkbackendjava.services.CowService;
 
@@ -23,6 +24,11 @@ public class CowController {
 	@GetMapping
 	public List<CowMinDTO> findAll() {
 		return cowService.findAll();
+	}
+	
+	@GetMapping(path = "/{id}")
+	public CowDTO findById(@PathVariable("id") Long id) {
+		return cowService.findById(id);
 	}
 	
 	@PutMapping(path = "/{id}")
