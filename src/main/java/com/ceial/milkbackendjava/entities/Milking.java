@@ -27,7 +27,7 @@ public class Milking {
 	private String identification;
 	private LocalDateTime initialTime;
 	private LocalDateTime finalTime;
-	private Double milkQuantity;
+	private Double totalMilk;
 	private String operator;
 
 }
